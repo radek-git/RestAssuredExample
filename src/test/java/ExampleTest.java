@@ -144,4 +144,9 @@ public class ExampleTest {
         assertEquals(values.get(0), "Hit ds");
     }
 
+    @Test
+    public void emptyTest() {
+
+    }
+
 }
