@@ -84,31 +84,31 @@ public class ExampleTest {
                 .body(matchesJsonSchemaInClasspath("file.json"));
     }
 
-    @Test
-    public void checkItems() {
-        when().get("https://qrng.anu.edu.au/API/jsonI.php?length=5&type=uint16")
-                .then()
-                .body("data", hasItems(6493, 9990, 44054, 3254, 15620));
-    }
-
-    @Test
-    public void checkXML() {
-        when()
-                .get("http://www.geoplugin.net/xml.gp?ip=xx.xx.xx.xx")
-                .then()
-                .body("geoPlugin.geoplugin_request", equalTo("89.64.71.175"));
-    }
-
-    @Test
-    public void checkXmlWithExtractedResponse() {
-        Response response = when()
-                .get("http://www.geoplugin.net/xml.gp?ip=xx.xx.xx.xx")
-                .then()
-                .body("geoPlugin.geoplugin_request", equalTo("89.64.71.175"))
-                .extract().response();
-
-        Assert.assertEquals(response.statusCode(), 200);
-    }
+//    @Test
+//    public void checkItems() {
+//        when().get("https://qrng.anu.edu.au/API/jsonI.php?length=5&type=uint16")
+//                .then()
+//                .body("data", hasItems(6493, 9990, 44054, 3254, 15620));
+//    }
+//
+//    @Test
+//    public void checkXML() {
+//        when()
+//                .get("http://www.geoplugin.net/xml.gp?ip=xx.xx.xx.xx")
+//                .then()
+//                .body("geoPlugin.geoplugin_request", equalTo("89.64.71.175"));
+//    }
+//
+//    @Test
+//    public void checkXmlWithExtractedResponse() {
+//        Response response = when()
+//                .get("http://www.geoplugin.net/xml.gp?ip=xx.xx.xx.xx")
+//                .then()
+//                .body("geoPlugin.geoplugin_request", equalTo("89.64.71.175"))
+//                .extract().response();
+//
+//        Assert.assertEquals(response.statusCode(), 200);
+//    }
 
     @Test
     public void checkParsedJson() {
